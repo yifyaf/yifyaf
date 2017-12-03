@@ -11,7 +11,7 @@ export default class Main extends Component {
 		}
 	}
 
-	componentWillMount(){
+	componentDidMount(){
 		axios.get('http://www.reddit.com/r/collegesluts/new.json?limit=500&after=t31qa3v3&count=10')
 		.then(res => {
 			let MyList = [];

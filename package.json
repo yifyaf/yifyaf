@@ -1,0 +1,50 @@
+{
+  "name": "college",
+  "version": "1.0.0",
+  "description": "",
+  "postinstall": "webpack",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "antd": "^2.13.10",
+    "axios": "^0.17.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-partials": "^0.3.0",
+    "express-session": "^1.15.6",
+    "hammerjs": "^2.0.8",
+    "method-override": "^2.3.10",
+    "phantomjs": "^2.1.7",
+    "react": "^16.1.1",
+    "react-bootstrap": "^0.31.5",
+    "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-swipe-card": "^0.1.4",
+    "react-tinderable": "^0.1.8",
+    "reactify": "^1.1.1",
+    "request": "^2.83.0",
+    "semantic-ui-react": "^0.77.0",
+    "webpage": "^0.3.0"
+  },
+  "engines": {
+    "node": "7.3.0"
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.24.1",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5"
+  }
+}

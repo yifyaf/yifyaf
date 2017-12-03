@@ -12,7 +12,7 @@ export default class Main extends Component {
 	}
 
 	componentDidMount(){
-		axios.get('http://www.reddit.com/r/collegesluts/new.json?limit=400&after=t31qa3v3&count=10')
+		axios.get('http://www.reddit.com/r/collegesluts/new.json?limit=500&after=t31qa3v3&count=10')
 		.then(res => {
 			let MyList = [];
 
@@ -49,12 +49,12 @@ export default class Main extends Component {
 
 		if (this.state.content == null) {
 			return (
-				<div class='loading'>Loading...</div>
+				<div className='loading'>Loading...</div>
 			);
 		}
 
 	    return(
-	        <div class="list-items">
+	        <div className="list-items">
 	        	<ArticleList
 	        		items={this.state.content}
 	        	/>

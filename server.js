@@ -25,7 +25,14 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 
 //Routes
-require('./controllers/routes.js')(app, cheerio, phantomjs, request);
+// require('./controllers/routes.js')(app, cheerio, request);
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", '*');
+    res.header("Access-Control-Allow-Credentials", true);
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+    next();
+});
 
 
 // //start server

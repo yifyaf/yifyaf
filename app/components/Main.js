@@ -13,7 +13,8 @@ export default class Main extends Component {
 	}
 
 	componentDidMount(){
-		fetch('http://www.reddit.com/r/collegesluts/new.json?limit=500&after=t31qa3v3&count=10')
+		const url = 'http://www.reddit.com/r/collegesluts/new.json?limit=500&after=t31qa3v3&count=10';
+		fetch(url, {mode: 'cors'})
 		.then(res => res.json())
 		.then(data => {
 			let MyList = [];

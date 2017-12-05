@@ -1,48 +1,38 @@
-module.exports = function(app, cheerio, request) {
-
-    app.use('/test', function(req, res) {
-        res.header("Access-Control-Allow-Origin", "*");
-          res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-          next();
-        // scrapper();
-        // function scrapper() {
-        //     var promises = [];
-
-        //     request("https://www.reddit.com/r/all/", function(err, res, html) {
-
-        //         //load the HTML in the Cheerio selector commands
-        //         var $ = cheerio.load(html);
-        //         var res = [];
-        //         console.log(html);
-        //         //cheerio will allow me to grab p-tag with the "title" class (i: iterator. element: the current element)
-        //         $("div.thing").each(function(i, element) {
-        //             // var title = $(element).children("div.entry").children("p.title").children("a").text();
-        //             var title = $(element).children('div.entry').children('div.top-matter').children('p.title').children('a').text();
-        //             // var link = $(element).children("ul.flat-list").children("li.first").children("a").attr("href");
-        //             var upvote = $(element).attr("data-rank");
-        //             // var img = $(element).children("a.thumbnail").children("img").attr("src");
-        //             var img = $(element).children('a.thumbnail').attr('href');
-
-        //             var article = {
-        //                 "title": title,
-        //                 "link": upvote,
-        //                 "img": img
-        //             };
-
-        //             res.push(article);
-
-        //         });
-        //             console.log(res);
-        //     });
-        // }
+module.exports = function(app, request) {
+    app.get('/', function(req, res) {
+        console.log('welcome to my pokemon credetials');
     });
 
-    // app.use('*', function(req, res) {
-    //     console.log('the stars are aligned');
-    //     var dir = __dirname;
-    //     var dirSplit = dir.split("controllers");
-    //     dir = dirSplit[0];
+    app.get('/api_call', function(req, res) {
+        const url = 'http://www.reddit.com/r/collegesluts/new.json?limit=500&after=t31qa3v3&count=10';
 
-    //     res.sendFile(dir + '/public/index.html');
-    // });
+        request(url, function(err, data, body) {
+            var MyList = [];
+            var json = JSON.parse(data.body);
+            var responseData = json.data.children;
+
+            responseData.forEach(function(item) {
+                var data_img = item.data.url;
+
+                if (item.data.domain == 'i.imgur.com' && data_img.charAt(data_img.length - 1) == 'v') {
+                    data_img = data_img.slice(0, -1);
+                }
+                else if (item.data.domain == 'gyfcat.com') {
+                    data_img = 'http://developers.gfycat.com/api/images/logo.png';
+                }
+                MyList.push({
+                    author: item.data.author,
+                    img: data_img,
+                    user_link: 'http://www.reddit.com/user/' + item.data.author,
+                    url: item.data.url,
+                    title: item.data.title.toUpperCase()
+                });
+            });
+            res.send(MyList);
+        });
+    });
+
+    app.get('*', function(req, res) {
+        res.send('/');
+    });
 };

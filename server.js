@@ -3,10 +3,8 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const methodOverride = require('method-override');
+const partials = require('express-partials');
 const request = require('request');
-const cheerio = require('cheerio');
-const phantomjs = require('phantomjs');
-var partials = require('express-partials');
 const PORT = process.env.PORT || 3000;
 
 // INIT EXPRESS
@@ -25,15 +23,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 
 //Routes
-// require('./controllers/routes.js')(app, cheerio, request);
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", '*');
-    res.header("Access-Control-Allow-Credentials", true);
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
-    next();
-});
-
+require('./controllers/routes.js')(app, request);
 
 // //start server
 app.listen(PORT, function() {

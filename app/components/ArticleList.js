@@ -8,7 +8,7 @@ const ArticleList = (props) => {
 
 		if (i % 3 === 0) {
 			return (
-				<div className='ui container'>
+				<div class='ui container'>
 					<ArticleListItems
 						key={i}
 						article={article}
@@ -19,7 +19,7 @@ const ArticleList = (props) => {
 		}
 		else {
 			return (
-				<div className='ui container'>
+				<div class='ui container'>
 					<ArticleListItems
 						key={i}
 						article={article}

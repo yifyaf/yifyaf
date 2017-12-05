@@ -13,7 +13,7 @@ const ArticleList = (props) => {
 						key={i}
 						article={article}
 					/>
-					<div class="ui centered banner test ad">yif tyaf</div>
+					<div class="ui centered banner test ad"></div>
 				</div>
 			)
 		}

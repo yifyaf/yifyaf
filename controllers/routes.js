@@ -13,11 +13,13 @@ module.exports = function(app, request) {
 
             responseData.forEach(function(item) {
                 var data_img = item.data.url;
-
-                if (item.data.domain == 'i.imgur.com' && data_img.charAt(data_img.length - 1) == 'v') {
+                // console.log('fromt the list', item.data.domain, '  ', data_img);
+                if (item.data.domain === 'i.imgur.com' && data_img.charAt(data_img.length - 1) == 'v') {
+                    console.log('imagurg')
                     data_img = data_img.slice(0, -1);
                 }
-                else if (item.data.domain == 'gyfcat.com') {
+                else if (item.data.domain === 'gfycat.com') {
+                    console.log('gyfycat')
                     data_img = 'http://developers.gfycat.com/api/images/logo.png';
                 }
                 MyList.push({

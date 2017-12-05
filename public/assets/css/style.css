@@ -32,7 +32,7 @@ body {
 }
 
 .my-card {
-	margin: 20px;
+	margin: 5px;
 }
 
 /*.image img {
@@ -124,7 +124,7 @@ body {
     // transform: scale(.3);
     opacity: 0;
   }
-  
+
   100% {
     width: 50%;
     // transform:scale(1);
@@ -226,6 +226,9 @@ opacity: 1;
 		text-align: center;
 	}
 
+  .my-card {
+    margin: 20px;
+  }
 
 	.list-items {
 		padding-left: 250px;

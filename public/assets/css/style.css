@@ -32,7 +32,10 @@ body {
 }
 
 .my-card {
-	margin: 5px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+	margin-right: 5px;
+  margin-left: 5px;
 }
 
 /*.image img {

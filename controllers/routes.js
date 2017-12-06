@@ -22,6 +22,9 @@ module.exports = function(app, request) {
                     // console.log('gyfycat')
                     data_img = 'http://developers.gfycat.com/api/images/logo.png';
                 }
+                else if (item.data.domain === 'i.imgur.com' && data_img.charAt(data_img.length - 1) == '4') {
+                    data_img = 'http://developers.gfycat.com/api/images/logo.png';
+                }
                 MyList.push({
                     author: item.data.author,
                     img: data_img,

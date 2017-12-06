@@ -1,10 +1,6 @@
 import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react';
 
-// twoTabs() {
-	// window.open("http://www.google.com",'_blank');
-// 	window.open("http://www.p3php.in",'_blank');
-// }
 
 const Ad = ({ article }) => {
 	return (

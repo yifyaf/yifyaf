@@ -1,7 +1,6 @@
 import React from 'react';
 import ArticleListItems from './ArticleListItems';
 import Ad from './Ad';
-// <div class="ui centered banner test ad"></div>
 
 const ArticleList = (props) => {
 

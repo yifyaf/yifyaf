@@ -16,7 +16,8 @@ body {
 
 .clearfix {
 	font-family: 'VT323', monospace;
-	background-color: #ff69b4;
+	/*background-color: #ff69b4;*/
+  background-image: url("../christmas6.jpg");
 }
 
 .loading {

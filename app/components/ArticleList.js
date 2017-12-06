@@ -1,6 +1,7 @@
 import React from 'react';
 import ArticleListItems from './ArticleListItems';
-
+import Ad from './Ad';
+// <div class="ui centered banner test ad"></div>
 
 const ArticleList = (props) => {
 
@@ -9,11 +10,10 @@ const ArticleList = (props) => {
 		if (i % 3 === 0) {
 			return (
 				<div class='ui container'>
-					<ArticleListItems
+					<Ad
 						key={i}
 						article={article}
 					/>
-					<div class="ui centered banner test ad"></div>
 				</div>
 			)
 		}

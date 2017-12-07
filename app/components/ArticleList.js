@@ -65,7 +65,7 @@ export default class ArticleList extends Component {
 
 		const renderToDos = currentTodos.map((article, i) => {
 			return (
-				<div class='ui container'>
+				<div class=''>
 					<ArticleListItems
 						key={i}
 						article={article}

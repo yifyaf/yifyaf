@@ -26,7 +26,7 @@ export default class Main extends Component {
 		}
 
 	    return(
-	        <div class="list-items">
+	        <div class="grid">
 	        	<ArticleList
 	        		items={this.state.content}
 	        	/>

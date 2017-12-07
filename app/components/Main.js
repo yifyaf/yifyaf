@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 import ArticleList from './ArticleList';
 import helper from '../utils/helper';
 
-
-// {this.props.children}
 export default class Main extends Component {
 	constructor(props) {
 		super(props);

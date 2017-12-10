@@ -3,9 +3,10 @@ import { Card, Icon, Image } from 'semantic-ui-react';
 
 const ArticleListItems = ({ article }) => {
 	return (
-		<div class="grid-item">
+		<div class="my-card">
+			<a href={article.user_link}><button class="fluid huge ui top attached grey button">{article.author}</button></a>
 				<img class="ui fluid image" src={article.img} />
-				<p>{article.author}</p>
+			<a href={article.url}><button class="fluid huge ui bottom attached primary button">{article.title}</button></a>
 		</div>
 	)
 };

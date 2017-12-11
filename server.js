@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const methodOverride = require('method-override');
 const partials = require('express-partials');
+const db = require('./models');
 const request = require('request');
 const PORT = process.env.PORT || 3000;
 
@@ -26,6 +27,8 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 require('./controllers/routes.js')(app, request);
 
 // //start server
-app.listen(PORT, function() {
-	console.log('Listening on port : ' + PORT);
-});
+// db.sequelize.sync({ force: true }).then(function() {
+    app.listen(PORT, function(){
+        console.log('Server successfully connected on PORT %s', PORT);
+    });
+// });

@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
-import ArticleList from './ArticleList';
 import helper from '../utils/helper';
+import Pagination from './Pagination';
 
 export default class Main extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			content: null
+			content: null,
+			pageOfItems: []
 		}
+		this.onChangePage = this.onChangePage.bind(this);
 	}
 
 	componentDidMount() {
@@ -15,6 +17,10 @@ export default class Main extends Component {
 			console.log(res.data);
 			this.setState({content: res.data});
 		}.bind(this));
+	}
+
+	onChangePage(pageOfItems) {
+		this.setState({ pageOfItems: pageOfItems});
 	}
 
 	render() {
@@ -26,9 +32,12 @@ export default class Main extends Component {
 		}
 
 	    return(
-        	<ArticleList
-        		items={this.state.content}
-        	/>
+	    	<div>
+	        	<ArticleList
+	        		items={this.state.content}
+	        	/>
+        		<Pagination items={this.state.content} onChangePage={this.onChangePage} />
+        	</div>
 	    )
 	}
 }

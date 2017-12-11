@@ -27,8 +27,12 @@
     "express-session": "^1.15.6",
     "fetch-jsonp": "^1.1.3",
     "hammerjs": "^2.0.8",
+    "lodash": "^4.17.4",
     "method-override": "^2.3.10",
+    "mysql2": "^1.5.1",
     "phantomjs": "^2.1.7",
+    "pornhub-api": "0.0.1",
+    "pornsearch": "^2.2.5",
     "react": "^16.1.1",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.2.0",
@@ -41,6 +45,7 @@
     "reactify": "^1.1.1",
     "request": "^2.83.0",
     "semantic-ui-react": "^0.77.0",
+    "sequelize": "^4.27.0",
     "webpage": "^0.3.0"
   },
   "engines": {

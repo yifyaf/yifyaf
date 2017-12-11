@@ -1,3 +1,5 @@
+const Pornsearch = require('pornsearch').default.search('snapchat');
+
 module.exports = function(app, request) {
     app.get('/', function(req, res) {
         console.log('welcome to my pokemon credetials');
@@ -37,7 +39,15 @@ module.exports = function(app, request) {
         });
     });
 
-    app.get('*', function(req, res) {
-        res.send('/');
+    app.get('/ass_gifs', function(req, res) {
+        var gifs = [];
+        Pornsearch.gifs()
+        .then(gif => {
+            res.send(gif);
+        });
     });
+
+    // app.get('*', function(req, res) {
+    //     res.send('/');
+    // });
 };

@@ -26,11 +26,9 @@ export default class Main extends Component {
 		}
 
 	    return(
-	        <div class="list-items">
-	        	<ArticleList
-	        		items={this.state.content}
-	        	/>
-	        </div>
+        	<ArticleList
+        		items={this.state.content}
+        	/>
 	    )
 	}
 }

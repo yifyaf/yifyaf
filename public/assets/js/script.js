@@ -1,5 +1,4 @@
-$(document).ready(function() {
-	/*
+/*
 JALISWALL 0.3
 by Pierre Bonnin - @PierreBonninPRO - 2015
 */
@@ -112,4 +111,12 @@ by Pierre Bonnin - @PierreBonninPRO - 2015
     return this;
   }
 })(jQuery);
-});
+
+
+
+
+function onChange(){
+  console.log('cols number changed');
+}
+
+$('.wall').jaliswall({item:'.article', onChange:onChange});

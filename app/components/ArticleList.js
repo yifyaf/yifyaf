@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Grid } from 'semantic-ui-react';
 import ArticleListItems from './ArticleListItems';
 import Ad from './Ad';
 
@@ -45,7 +46,7 @@ export default class ArticleList extends Component {
 		this.state = {
 			todos: this.props.items,
 			currentPage: 1,
-			todosPerPage: 10
+			todosPerPage: 12
 		}
 		this.handleClick = this.handleClick.bind(this);
 	}
@@ -91,7 +92,9 @@ export default class ArticleList extends Component {
 
 		return (
 			<div>
-				{renderToDos}
+				<Grid>
+					{renderToDos}
+				</Grid>
 				<ul id="page-numbers">
 					{renderPageNumbers}
 				</ul>

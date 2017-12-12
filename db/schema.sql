@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS yifyaf_db;
+USE yifyaf_db;
+
+DROP TABLE IF EXISTS vr_videos;
+
+CREATE TABLE vr_videos (
+	id INT NOT NULL AUTO_INCREMENT,
+	title VARCHAR(30) NOT NULL,
+	url VARCHAR(300) NOT NULL,
+	date_created DATETIME NOT NULL,
+	PRIMARY KEY (id)
+);

@@ -1,5 +1,5 @@
-const Pornsearch = require('pornsearch').default.search('snapchat');
-const db = require('../models');
+// const Pornsearch = require('pornsearch').default.search('snapchat');
+// const db = require('../models');
 
 module.exports = function(app, request) {
     app.get('/', function(req, res) {

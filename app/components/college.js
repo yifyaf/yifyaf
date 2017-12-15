@@ -22,6 +22,10 @@ export default class college extends Component {
 		}.bind(this));
 	}
 
+	componentDidUpdate () {
+	  window.scrollTo(0, 0)
+	}
+
 	onChangePage(pageOfItems) {
 		this.setState({ pageOfItems });
 		console.log('from the parent ', pageOfItems);

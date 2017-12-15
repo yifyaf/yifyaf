@@ -1,4 +1,5 @@
 const Pornsearch = require('pornsearch').default.search('snapchat');
+const db = require('../models');
 
 module.exports = function(app, request) {
     app.get('/', function(req, res) {
@@ -44,6 +45,14 @@ module.exports = function(app, request) {
         Pornsearch.gifs()
         .then(gif => {
             res.send(gif);
+            // console.log(gif.length);
+            // for (var i = 0; i < gif.length; i++) {
+            //     db.vr_list.create({
+            //         title: gif[i].title,
+            //         url: gif[i].url,
+            //         gif: gif[i].webm
+            //     });
+            // }
         });
     });
 

@@ -27,7 +27,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 require('./controllers/routes.js')(app, request);
 
 // //start server
-// db.sequelize.sync({ force: true }).then(function() {
+// db.sequelize.sync({ force: false }).then(function() {
     app.listen(PORT, function(){
         console.log('Server successfully connected on PORT %s', PORT);
     });

@@ -43,7 +43,7 @@ export default class Pagination extends Component {
 
 	getPager(totalItems, currentPage, pageSize) {
 		currentPage = currentPage || 1;
-		pageSize = pageSize || 6;
+		pageSize = pageSize || 12;
 
 		var totalPages = Math.ceil(totalItems/pageSize);
 

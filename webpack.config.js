@@ -1,4 +1,5 @@
 // let webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 
@@ -7,7 +8,8 @@ module.exports = {
 
   // Then output into this file
   output: {
-    filename: "public/bundle.js"
+    filename: "public/bundle.js",
+    publicPath: '/'
   },
 
   // This will be what we do
@@ -35,5 +37,8 @@ module.exports = {
       }
     ]
   },
-  devtool: "eval-source-map"
+  devtool: "eval-source-map",
+  devServer: {
+    historyApiFallback: true,
+  }
 }

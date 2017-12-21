@@ -43,6 +43,10 @@ body {
   margin-left: 5px;
 }
 
+.pagination {
+  text-align: center;
+}
+
 /*.image img {
     position: relative;
     float: left;

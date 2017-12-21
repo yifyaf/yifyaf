@@ -65,7 +65,9 @@ export default class college extends Component {
 						{renderPage}
 					</Grid>
 				</div>
-				<Pagination items={this.state.content} onChangePage={this.onChangePage} />
+				<div class='text-center'>
+					<Pagination items={this.state.content} onChangePage={this.onChangePage} />
+				</div>
 			</div>
 		)
 	}

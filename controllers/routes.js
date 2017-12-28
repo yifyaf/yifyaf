@@ -8,7 +8,7 @@ module.exports = function(app, request, path) {
 
     app.get('/api_call', function(req, res) {
         const url = 'http://www.reddit.com/r/collegesluts/new.json?limit=500&after=t31qa3v3&count=10';
-        // const url = 'http://www.reddit.com/r/60fpsporn/new.json?limit=500&after=t31qa3v3&count=10';
+        // const url = 'http://www.reddit.com/r/60fpspornf/new.json?limit=500&after=t31qa3v3&count=10';
 
         request(url, function(err, data, body) {
             var MyList = [];

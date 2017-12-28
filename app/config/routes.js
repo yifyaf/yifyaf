@@ -5,6 +5,7 @@ import Main from '../components/Main';
 import college from '../components/college';
 import Vr from '../components/Vr';
 import Gifs from '../components/Gifs';
+import Test from '../components/Test';
 
 export default (
 
@@ -19,7 +20,7 @@ export default (
 			<nav id="nav">
 				<ul>
 					<li id='link-item1'><Link to="/">HOME</Link></li>
-					<li id='link-itemx'><Link to="/gifs">GIFS</Link></li>
+					<li id='link-itemx'><Link to="/test">TEST</Link></li>
 			        <li id='link-item2'><Link to="/vr">VR</Link></li>
 			        <li id='link-item3'><Link to="/zillow-group">Coming</Link></li>
 			        <li id='link-item4'><Link to="/yahoo">Soon</Link></li>
@@ -30,7 +31,7 @@ export default (
 
 			<Route exact path='/' component={college} />
 			<Route exact path='/vr' component={Vr} />
-			<Route exact path='/gifs' component={Gifs} />
+			<Route exact path='/test' component={Test} />
 		</div>
 	</Router>
 

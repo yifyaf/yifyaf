@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Loader, Dimmer } from 'semantic-ui-react';
 import ArticleListItems from './ArticleListItems';
 import Pagination from './Pagination';
 import helper from '../utils/helper';
@@ -35,7 +35,9 @@ export default class college extends Component {
 
 		if (this.state.content == null) {
 			return (
-				<div class='loading'>Loading...</div>
+				<Dimmer active inverted>
+					<Loader active inline='centered' size='large' >Loading</Loader>
+				</Dimmer>
 			);
 		}
 

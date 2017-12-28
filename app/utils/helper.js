@@ -5,7 +5,10 @@ var helper = {
         return axios.get('/api_call');
     },
     getGifs: function() {
-    	return axios.get('/ass_gifs');
+    	return axios.get('/gifs');
+    },
+    getVideos: function() {
+    	return axios.get('/api/test');
     }
 };
 

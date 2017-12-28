@@ -1,13 +1,14 @@
-// const Pornsearch = require('pornsearch').default.search('snapchat');
+const ps = require('pornsearch').default;
 // const db = require('../models');
 
-module.exports = function(app, request) {
+module.exports = function(app, request, path) {
     app.get('/', function(req, res) {
         console.log('welcome to my pokemon credetials');
     });
 
     app.get('/api_call', function(req, res) {
         const url = 'http://www.reddit.com/r/collegesluts/new.json?limit=500&after=t31qa3v3&count=10';
+        // const url = 'http://www.reddit.com/r/60fpsporn/new.json?limit=500&after=t31qa3v3&count=10';
 
         request(url, function(err, data, body) {
             var MyList = [];
@@ -56,7 +57,15 @@ module.exports = function(app, request) {
         });
     });
 
-    // app.get('*', function(req, res) {
-    //     res.send('/');
-    // });
+    app.get('/api/test', function(req, res) {
+        ps.search('alice')
+        .videos()
+        .then(videos => {
+            res.send(videos[0]);
+        });
+    });
+
+    app.get('*', function(req, res) {
+        res.sendFile(path.resolve(__dirname, '../public', 'index.html'));
+    });
 };

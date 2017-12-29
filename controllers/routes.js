@@ -1,4 +1,6 @@
 const ps = require('pornsearch').default;
+const Redtube = require('redtube');
+const r = new Redtube({output: 'json'});
 // const db = require('../models');
 
 module.exports = function(app, request, path) {
@@ -8,12 +10,14 @@ module.exports = function(app, request, path) {
 
     app.get('/api_call', function(req, res) {
         const url = 'http://www.reddit.com/r/collegesluts/new.json?limit=500&after=t31qa3v3&count=10';
-        // const url = 'http://www.reddit.com/r/60fpspornf/new.json?limit=500&after=t31qa3v3&count=10';
+        // const url = 'http://www.reddit.com/r/60fpsporn/new.json?limit=500&after=t31qa3v3&count=10';
 
         request(url, function(err, data, body) {
             var MyList = [];
             var json = JSON.parse(data.body);
             var responseData = json.data.children;
+
+            console.log(responseData[0]);
 
             responseData.forEach(function(item) {
                 var data_img = item.data.url;
@@ -46,23 +50,25 @@ module.exports = function(app, request, path) {
         Pornsearch.gifs()
         .then(gif => {
             res.send(gif);
-            // console.log(gif.length);
-            // for (var i = 0; i < gif.length; i++) {
-            //     db.vr_list.create({
-            //         title: gif[i].title,
-            //         url: gif[i].url,
-            //         gif: gif[i].webm
-            //     });
-            // }
+            console.log(gif.length);
+            for (var i = 0; i < gif.length; i++) {
+                db.vr_list.create({
+                    title: gif[i].title,
+                    url: gif[i].url,
+                    gif: gif[i].webm
+                });
+            }
         });
     });
 
     app.get('/api/test', function(req, res) {
-        ps.search('alice')
-        .videos()
-        .then(videos => {
-            res.send(videos[0]);
-        });
+        const randomStart = ['teen', 'ass', 'tits', 'college', 'university', 'sorority', '18'];
+
+        r.search({search: randomStart[Math.floor(Math.random() * randomStart.length)]}, function(err, resp) {
+            if(!err)
+            res.send(resp.videos[0]);
+            console.log(resp.videos[0].video);
+        })
     });
 
     app.get('*', function(req, res) {

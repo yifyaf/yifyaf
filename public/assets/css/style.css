@@ -5,13 +5,40 @@ body {
 	font-family: 'VT323', monospace;
 }
 
-.notepad {
-  background: white;
+.grid {
+  -webkit-column-count:1;
+  -webkit-column-gap:10px;
+  -webkit-column-fill:auto;
+  -moz-column-count:1;
+  -moz-column-gap:10px;
+  -moz-column-fill:auto;
+  column-count:1;
+  column-gap:15px;
+  column-fill:auto;
+}
+
+.grid-item {
+  display:inline-block;
+  margin:0 0 10px;
+  /*padding:2px;*/
+  padding-bottom:5px;
+  -webkit-column-break-inside:avoid;
+  -moz-column-break-inside:avoid;
+  column-break-inside:avoid;
+}
+
+.ui{
+  border-radius: 5px;
+  width: 100%;
 }
 
 .svg-logo {
-	width: 50%;
+	width: 20%;
 	margin-bottom: 0px;
+}
+
+.singleImage {
+  width: 42rem;
 }
 
 .ui h2{
@@ -20,8 +47,7 @@ body {
 
 .clearfix {
 	font-family: 'VT323', monospace;
-	background-color: #ff69b4;
-  /*background-image: url("../christmas6.jpg");*/ /*CHRISTMAS*/
+  background-color: 0 0;
 }
 
 .loading {
@@ -29,7 +55,6 @@ body {
 }
 
 .header-title {
-	/*padding: 5px;*/
 	margin: 15px;
 	text-align: center;
 	color: yellow;
@@ -47,24 +72,12 @@ body {
   text-align: center;
 }
 
-/*.image img {
-    position: relative;
-    float: left;
-    width:  100px;
-    height: 100px;
-    background-position: 50% 50%;
-    background-repeat:   no-repeat;
-    background-size:     cover;
-}*/
-
-
-/*header {
-  width: 100%;
-  height: 100%;
-  background: #e74c3c;
-  position: absolute;
-  overflow: auto;
-}*/
+.video_player {
+  width: 660px;
+  height: 425px;
+  display: block;
+  margin: 0 auto;
+}
 
 .icon-1, .icon-2, .icon-3 {
     position: absolute;
@@ -266,26 +279,40 @@ opacity: 1;
 	}
 }
 
+@media (min-width: 450px) {
+  .grid {
+    -webkit-column-count:2;
+    -moz-column-count:2;
+    column-count:2; 
+  }
+}
+
+@media (min-width: 650px) {
+  .grid {
+    -webkit-column-count:3;
+    -moz-column-count:3;
+    column-count:3; 
+  }
+}
+
+@media (min-width: 960px) {
+  .grid {
+    -webkit-column-count:4;
+    -moz-column-count:4;
+    column-count:4; 
+  }
+
+  .clearfix {
+    padding: 55px;
+  }
+}
+
 @media only screen and (max-width: 767px){
     .responsive.html_header_sidebar #top {
         position: relative;
     }
 }
 
-/*#wrap_all { position: relative !important; }*/
-
-/*body {
-    overflow:hidden;
-    width:100%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-}*/
-
 /*===========================*/
 
 a { cursor: pointer; }
-
-
-
-

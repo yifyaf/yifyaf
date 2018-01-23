@@ -1,11 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import Main from '../components/Main';
 import college from '../components/college';
-import Vr from '../components/Vr';
-import Gifs from '../components/Gifs';
-import Test from '../components/Test';
+import singlePost from '../components/singlePost';
 
 export default (
 
@@ -30,8 +27,7 @@ export default (
 			<div class="dark-blue" id="blue"></div>
 
 			<Route exact path='/' component={college} />
-			<Route exact path='/vr' component={Vr} />
-			<Route exact path='/test' component={Test} />
+			<Route exact path='/test' component={singlePost} />
 		</div>
 	</Router>
 
